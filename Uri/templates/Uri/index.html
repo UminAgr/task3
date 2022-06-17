@@ -1,0 +1,26 @@
+{% extends 'Uri/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+      <h1>Главная страница</h1>
+   <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">Привет, интересно?</h1>
+      <p class="fs-5 text-muted">Ну, как тебе?</p>
+   </div>
+     {% if tasks %}
+       {% for el in tasks %}
+         <div class="alert alert-warning mt-2"  >
+             <h3>{{ el.title }}</h3>
+               <p>{{ el.task }}</p>
+
+         </div>
+       {% endfor %}
+     {% else %}
+          <p> Нету заметок бро!?</p>
+     {% endif %}
+{% endblock %}
+
+
